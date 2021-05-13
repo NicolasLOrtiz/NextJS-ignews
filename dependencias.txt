@@ -17,3 +17,7 @@ yarn add react-toastify //Instalei pq não consigo dar um alert()
 stripe login
 stripe listen --forward-to localhost:3000/api/webhooks
 
+#Instalar o PRISMIC
+yarn add @prismicio/client
+yarn add prismic-dom
+yarn add @types/prismic-dom -D

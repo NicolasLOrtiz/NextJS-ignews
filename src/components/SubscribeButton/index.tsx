@@ -5,6 +5,7 @@ import { getStripeJs } from '../../services/stripe-js'
 
 import styles from './styles.module.scss'
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/dist/client/router'
 
 interface SubscribeButtonProps {
 	priceId: string;
@@ -12,11 +13,17 @@ interface SubscribeButtonProps {
 
 export function SubscribeButton({ priceId }: SubscribeButtonProps){
 	const [session] = useSession()
+	const router = useRouter();
 
 	async function handleSubscribe() {
 		if (!session) {
-			signIn('github')
-			return
+			signIn('github');
+			return;
+		}
+
+		if (session.activeSubscription) {
+			router.push('/posts');
+			return;
 		}
 
 		// Criação da Checkout session
