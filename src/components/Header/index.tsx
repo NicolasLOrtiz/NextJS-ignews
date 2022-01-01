@@ -17,7 +17,7 @@ export function Header(){
 					</ActiveLink>
 
 					<ActiveLink activeClassName={styles.active} href="/posts">
-						<a >Post</a>
+						<a >Posts</a>
 					</ActiveLink>
 				</nav>
 

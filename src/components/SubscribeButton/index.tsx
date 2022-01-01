@@ -7,22 +7,19 @@ import styles from './styles.module.scss'
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/dist/client/router'
 
-interface SubscribeButtonProps {
-	priceId: string;
-}
-
-export function SubscribeButton({ priceId }: SubscribeButtonProps){
+export function SubscribeButton(){
 	const [session] = useSession()
 	const router = useRouter();
 
 	async function handleSubscribe() {
 		if (!session) {
-			signIn('github');
+			await signIn('github');
 			return;
 		}
-
+		
+		console.log(session)
 		if (session.activeSubscription) {
-			router.push('/posts');
+			 await router.push('/posts');
 			return;
 		}
 

@@ -21,3 +21,8 @@ stripe listen --forward-to localhost:3000/api/webhooks
 yarn add @prismicio/client
 yarn add prismic-dom
 yarn add @types/prismic-dom -D
+
+# Testes automatizados
+yarn add jest jest-dom @testing-library/jest-dom @testing-library/dom @testing-library/react babel-jest -D
+yarn add identity-obj-proxy -D
+yarn add ts-jest -D
